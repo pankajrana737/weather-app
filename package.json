@@ -1,0 +1,28 @@
+{
+  "name": "simple-nodejs-weather-app",
+  "version": "1.0.0",
+  "description": "this is waether api node express appilcation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pankajrana737/Node-weather-api.git"
+  },
+  "author": "pankaj rana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pankajrana737/Node-weather-api/issues"
+  },
+  "homepage": "https://github.com/pankajrana737/Node-weather-api#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cool-ascii-faces": "^1.3.4",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "moment": "^2.26.0",
+    "request": "^2.81.0"
+  }
+}
