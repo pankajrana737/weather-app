@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>node-weather-demo</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+	
+      <fieldset>
+	  
+        <form action="/" method="post">
+		<h1 class =" ">Weather forcast by City name</h1>
+          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+          <input type="submit" class="ghost-button" value="Get Weather">
+        </form>
+        <% if(weatherData !== null){ %>
+       		
+				
+		
+		 
+	<% for (var i = 0; i < weatherData.list.length; i++){ %>
+		<div class="widget">
+		<div class="left-panel panel">
+
+                <div class="date">
+                 <!-- = moment.unix(weatherData.list[i].dt_txt).format('DD MMMM, YYYY')% -->
+				 <%- weatherData.list[i].dt_txt %>
+                </div>
+                <div class="city">
+				<%= weatherData.city.name %> &nbsp;
+                    <%= weatherData.city.country %> 
+					
+                </div>
+                <div class="temp">
+                   <img src='http://openweathermap.org/img/wn/<%-weatherData.list[i].weather[0].icon%>.png' alt="no icon" width="110" >
+                   <%= Math.round(weatherData.list[i].main.temp) %>&deg; 
+				<div class="weather"	>	
+					 Feels like      <%= Math.round(weatherData.list[i].main.feels_like) %>&deg;
+					Humidity :
+				   <%= weatherData.list[i].main.humidity %> % &nbsp;&nbsp;&nbsp;
+				   Weather :				   <%= weatherData.list[i].weather[0].description%>
+				   
+				   </div>
+				   
+				   
+                </div>
+            </div>
+			<div class="right-panel panel">
+                <img src="https://s5.postimg.cc/lifnombwz/mumbai1.png" alt="" width="200">
+            </div> 
+
+        </div>
+	<% } %>
+
+	
+   
+           
+            
+	
+        <% } %>
+
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+      </fieldset>
+    </div>
+	
+	
+  </body>
+</html>
